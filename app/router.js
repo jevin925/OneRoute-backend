@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function(app) {
+module.exports = function (app) {
     var onemap = require('./onemap/omController');
     var onemap_auth = require('./onemap_auth/authController');
     var api = require('./lib/one_code');
@@ -18,5 +18,9 @@ module.exports = function(app) {
     // API Routes
     app.route('/api/route')
         .get(api.get_features);
+    app.route('/api/routes')
+        .get(api.get_features);
 
 };
+
+
