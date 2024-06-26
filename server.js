@@ -1,9 +1,9 @@
 var express = require('express'),
     app = express(),
-    port = process.env.PORT || 3000,
+    port = process.env.PORT || 8000,
     bodyParser = require('body-parser');
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow'Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
@@ -17,8 +17,8 @@ onemap(app); //register the route
 
 app.listen(port);
 
-app.use(function(req, res) {
-    res.status(404).send({url: req.originalUrl + ' not found'})
+app.use(function (req, res) {
+    res.status(404).send({ url: req.originalUrl + ' not found' })
 });
 
 console.log('One Map RESTful API server started on: ' + port);
